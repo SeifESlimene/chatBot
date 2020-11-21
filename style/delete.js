@@ -34,7 +34,7 @@ shareButton.addEventListener('click',async()=>{
         let data={
             title:'CHATAPP',
             text:`INSTANT CHAT MESSAGES`,
-            url:'https://realtimechatt.herokuapp.com/'
+            url:'https://chat-seif-app.herokuapp.com/'
         }
         await navigator.share(data)
         console.log('shared successfully')

@@ -122,7 +122,7 @@ Router.post('/Register',(req,res)=>{
                             to: user.email,
                             subject: 'Welcome to CHATHERE',
                             text: 'You have successfully signed up ', 
-                            html: '<a href="https://realtimechatt.herokuapp.com/Login">Log In NOW</a>'
+                            html: '<a href="https://chat-seif-app.herokuapp.com/Login">Log In NOW</a>'
                         };
         
                         transport.sendMail(mailOptions, (error, info) => {
@@ -175,21 +175,21 @@ Router.get('/logout',(req,res)=>{
 })
 
 
-Router.get('/google',passport.authenticate('google',{
+Router.get('/google',passport.authenticate('chat-app',{
     scope:['profile','email']
     }))
    
 
-Router.get('/google/callback',passport.authenticate('google'),(req,res)=>{
+Router.get('/google/callback',passport.authenticate('chat-app'),(req,res)=>{
     res.redirect('/index')
 })
 
 
-Router.get('/facebook',passport.authenticate('facebook',{authType:'rerequest',scope:['email']},{
+Router.get('/facebook',passport.authenticate('Chat-App',{authType:'rerequest',scope:['email']},{
 
 }))
 
-Router.get('/facebook/callback',passport.authenticate('facebook'),(req,res)=>{
+Router.get('/facebook/callback',passport.authenticate('Chat-App'),(req,res)=>{
     res.redirect('/index')
 })
 

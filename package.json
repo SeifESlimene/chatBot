@@ -1,13 +1,13 @@
 {
   "name": "chatapp",
   "version": "1.0.0",
-  "description": "SocketIO chatAPP",
+  "description": "Chat App",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "author": "Waqas Rahman Khattak",
+  "author": "Seif Eddine Slimene",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

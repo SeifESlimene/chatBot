@@ -320,7 +320,7 @@ shareInvite.addEventListener('click',async()=>{
         let data={
             title:'CHATAPP',
             text:`${user.username} has invited you to CHATHERE`,
-            url:'https://realtimechatt.herokuapp.com/'
+            url:'https://chat-seif-app.herokuapp.com/'
         }
         
 
@@ -342,7 +342,7 @@ inviteButton.addEventListener('click',async()=>{
         let data={
             title:'CHATAPP',
             text:`${user.username} has invited you to CHATHERE`,
-            url:'https://realtimechatt.herokuapp.com/'
+            url:'https://chat-seif-app.herokuapp.com/'
         }
         
 

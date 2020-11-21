@@ -16,7 +16,7 @@ const  Mongoose  = require('mongoose');
 let mongoStore=require('connect-mongo')(session)
 
 
-require('dotenv').config()
+// require('dotenv').config()
 require('./Routes/passport');
 
 //MiddleWare for Template engine EJS

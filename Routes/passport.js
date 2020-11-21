@@ -37,17 +37,18 @@ passport.use(new LocalStrategy({usernameField:'Email'},(Email,password,cb)=>{
 }))
 
 
-passport.use('google' ,new GoogleStrategy({
+passport.use('chat-app' ,new GoogleStrategy({
     clientID:process.env.gclientID,
     clientSecret:process.env.gclientSecret,
     callbackURL:'http://localhost:3000/google/callback',
-    callbackURL:'https://realtimechatt.herokuapp.com/google/callback'
+    callbackURL:'https://chat-seif-app.herokuapp.com/google/callback'
 },(accessToken,refreshToken,profile,cb)=>{
     let username=profile.displayName
     let email=profile._json.email
     let googleID=profile.id
     let FBID=''
-    let password='dfnjknfksf@fsfj-34'
+    // let password='dfnjknfksf@fsfj-34'
+    let password='dksfjdsfiujdsf'
     let status=0;
 
     mongoUser.find({email:email},(err,user)=>{
@@ -74,11 +75,11 @@ passport.use('google' ,new GoogleStrategy({
                   });
 
               var mailOptions = {
-                from: '"CHATHERE TEAM" <catch99technical@gmail.com>',
+                from: '"KSAR HELLAL TEAM" <s.slimene19@gmail.com>',
                 to: user.email,
-                subject: 'Welcome to CHATHERE',
+                subject: 'Welcome to Ksar Hellal Chat',
                 text: 'You have successfully signed up ', 
-                html: '<a href="https://realtimechatt.herokuapp.com/Login">Log In NOW</a>'
+                html: '<a href="https://chat-seif-app.herokuapp.com/Login">Log In NOW</a>'
             };
 
                 transport.sendMail(mailOptions, (error, info) => {
@@ -101,11 +102,11 @@ passport.use('google' ,new GoogleStrategy({
 
 
 
-passport.use('facebook',new FbStrategy({
+passport.use('Chat-App',new FbStrategy({
     clientID:process.env.FBclientID,
     clientSecret: process.env.FBclientSecret,
     callbackURL: "http://localhost:3000/facebook/callback",
-    callbackURL:'https://realtimechatt.herokuapp.com/facebook/callback',
+    callbackURL:'https://chat-seif-app.herokuapp.com/facebook/callback',
 
     profileFields: ['id', 'displayName', 'photos', 'email']
     },
@@ -148,7 +149,7 @@ passport.use('facebook',new FbStrategy({
         to: user.email,
         subject: 'Welcome to CHATHERE',
         text: 'You have successfully signed up ', 
-        html: '<a href="https://realtimechatt.herokuapp.com/Login">Log In NOW</a>'
+        html: '<a href="https://chat-seif-app.herokuapp.com/Login">Log In NOW</a>'
     };
 
         transport.sendMail(mailOptions, (error, info) => {
