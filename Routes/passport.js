@@ -40,7 +40,7 @@ passport.use(new LocalStrategy({usernameField:'Email'},(Email,password,cb)=>{
 passport.use('chat-app' ,new GoogleStrategy({
     clientID:process.env.gclientID,
     clientSecret:process.env.gclientSecret,
-    callbackURL:'http://localhost:3000/google/callback',
+    // callbackURL:'http://localhost:3000/google/callback',
     callbackURL:'https://chat-seif-app.herokuapp.com/google/callback'
 },(accessToken,refreshToken,profile,cb)=>{
     let username=profile.displayName
@@ -105,7 +105,7 @@ passport.use('chat-app' ,new GoogleStrategy({
 passport.use('Chat-App',new FbStrategy({
     clientID:process.env.FBclientID,
     clientSecret: process.env.FBclientSecret,
-    callbackURL: "http://localhost:3000/facebook/callback",
+    // callbackURL: "http://localhost:3000/facebook/callback",
     callbackURL:'https://chat-seif-app.herokuapp.com/facebook/callback',
 
     profileFields: ['id', 'displayName', 'photos', 'email']
